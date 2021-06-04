@@ -1,0 +1,5 @@
+name: Dino Roar
+type: module
+description: "Roars at you"
+package: Custom
+core: 8.x
