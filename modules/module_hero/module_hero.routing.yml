@@ -1,0 +1,7 @@
+module_hero.heroList:
+  path: '/my/heroes'
+  defaults:
+    _controller: Drupal\module_hero\Controller\HeroController::heroList
+  requirements:
+    _permission: 'access content'
+

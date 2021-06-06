@@ -1,0 +1,5 @@
+name: Module Hero
+description: This will be listing all the super heroes
+package: custom
+core: 8.x
+type: module
