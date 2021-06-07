@@ -1,0 +1,5 @@
+services:
+  ourhero.list:
+    class: Drupal\module_hero\OurHero\heroService
+    arguments: ['@entity_type.manager']
+

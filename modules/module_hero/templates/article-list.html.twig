@@ -1,0 +1,7 @@
+<div class="article-list">
+  {% for node in nodes %}
+  <div class="article">
+    {{ drupal_entity('node', node.nid, 'teaser') }}
+  </div>
+  {% endfor %}
+</div>

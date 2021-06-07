@@ -5,3 +5,10 @@ module_hero.heroList:
   requirements:
     _permission: 'access content'
 
+module_hero.articleList:
+  path: '/my/articles'
+  defaults:
+    _controller: Drupal\module_hero\Controller\HeroController::articleList
+  requirements:
+    _permission: 'access content'
+
