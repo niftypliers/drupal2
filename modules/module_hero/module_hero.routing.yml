@@ -12,3 +12,18 @@ module_hero.articleList:
   requirements:
     _permission: 'access content'
 
+module_hero.module_hero_form:
+  path: '/hero-form'
+  defaults:
+    _form: '\Drupal\module_hero\Form\HeroForm'
+    _title: 'HeroForm'
+  requirements:
+    _permission: 'access content'
+
+module_hero.module_hero_ajax_form:
+  path: '/hero-ajaxform'
+  defaults:
+    _form: '\Drupal\module_hero\Form\HeroAjaxForm'
+    _title: 'Hero form Ajaxified'
+  requirements:
+    _permission: 'access content'
