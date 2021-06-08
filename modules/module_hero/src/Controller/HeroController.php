@@ -2,6 +2,7 @@
 
 namespace Drupal\module_hero\Controller;
 
+use Drupal\Core\Config\ConfigFactory;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\module_hero\OurHero\heroService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -12,10 +13,12 @@ class HeroController extends ControllerBase
    * @var heroService
    */
   private $heroService;
+  protected $configService;
 
-  public function __construct(heroService $heroService)
+  public function __construct(heroService $heroService, ConfigFactory $configService)
   {
     $this->heroService = $heroService;
+    $this->configService = $configService;
   }
 
   /**
@@ -24,7 +27,8 @@ class HeroController extends ControllerBase
   public static function create(ContainerInterface $container)
   {
     $heroContainer = $container->get('ourhero.list');
-    return new static($heroContainer);
+    $configContainer = $container->get('config.factory');
+    return new static($heroContainer, $configContainer);
   }
 
   public function heroList()
@@ -38,7 +42,8 @@ class HeroController extends ControllerBase
     ];
   }
 
-  public function articleList() {
+  public function articleList()
+  {
     $articles = $this->heroService->getArticleList();
     $nodeData = [];
     $i = 0;
@@ -49,11 +54,11 @@ class HeroController extends ControllerBase
       $i++;
     }
     // echo "<pre>"; print_r($nodeData); exit;
-    // kint($nodeData); die();
+    // kint($this->configService); die();
     return [
       '#theme' => 'article-list',
       '#nodes' => $nodeData,
-      '#title' => $this->t('My Articles')
+      '#title' => $this->configService->get('module_hero.heroconfig')->get('hero_page_title')
     ];
   }
 }

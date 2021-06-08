@@ -27,3 +27,13 @@ module_hero.module_hero_ajax_form:
     _title: 'Hero form Ajaxified'
   requirements:
     _permission: 'access content'
+
+module_hero.hero_config_form:
+  path: '/admin/config/module_hero/heroconfig'
+  defaults:
+    _form: '\Drupal\module_hero\Form\HeroConfigForm'
+    _title: 'Hero Configuration'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

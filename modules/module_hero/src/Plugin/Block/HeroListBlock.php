@@ -28,20 +28,21 @@ class HeroListBlock extends BlockBase implements ContainerFactoryPluginInterface
    * @var heroService
    */
   private $heroService;
-/*
-  public function __construct(heroService $heroService)
+
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, heroService $heroService)
   {
-    $this->heroService = $heroService;
-  }
-*/
-  public function __construct(heroService $heroService)
-  {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->heroService = $heroService;
   }
 
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
   {
-    return new static($container->get('ourhero.list'));
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('ourhero.list')
+    );
   }
 
   /**
