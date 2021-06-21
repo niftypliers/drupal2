@@ -1,0 +1,19 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/fontawesome-5.5/css/all.min.css: {}
+      css/slick/slick.css: {}
+      css/slick/slick-theme.css: {}
+      css/magnific-popup/magnific-popup.css: {}
+      css/bootstrap.min.css: {}
+      css/tooplate-infinite-loop.css: {}
+  js:
+    js/jquery-1.9.1.min.js: {}
+    css/slick/slick.min.js: {}
+    css/magnific-popup/jquery.magnific-popup.min.js: {}
+    js/easing.min.js: {}
+    js/jquery.singlePageNav.min.js: {}
+    js/bootstrap.min.js: {}
+    js/infinite.js: {}
+
